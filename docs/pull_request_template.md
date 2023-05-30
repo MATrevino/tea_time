@@ -6,7 +6,7 @@ Neccesary checkmarks:
 
     [] The code will run locally
 
-Type of change
+Type of change 
 
     [] New feature
     [] Bug Fix
