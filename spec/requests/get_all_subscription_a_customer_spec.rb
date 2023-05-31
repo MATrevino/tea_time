@@ -17,4 +17,22 @@ RSpec.describe 'Get All Subscriptions for a Customer' do
       expect(response.status).to eq(200)
     end
   end
+
+  describe 'sad path' do
+    it 'returns an error if customer does not exist' do
+      get "/api/v1/customers/100/subscriptions"
+
+      expect(response.status).to eq(404)
+      expect(response.body).to eq("{\"error\":\"Couldn't find Customer.\"}")
+    end
+
+    it 'returns error if customer has no subscriptions' do
+      customer2 = Customer.create!(first_name: "Barbara", last_name: "Walters", email: "noteaforme@example.com", address: "123 ABC Lane")
+      get "/api/v1/customers/#{customer2[:id]}/subscriptions"
+
+      expect(customer2.subscriptions.count).to eq(0)
+      expect(response.status).to eq(404)
+      expect(response.body).to eq("{\"error\":\"Customer has no subscriptions.\"}")
+    end
+  end
 end

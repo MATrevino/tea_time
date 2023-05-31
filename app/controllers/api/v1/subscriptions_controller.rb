@@ -10,9 +10,14 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def index
-    customer = Customer.find(params[:customer_id])
-    subscriptions = customer.subscriptions
-    render json: SubscriptionSerializer.new(subscriptions)
+    if Customer.exists?(params[:customer_id]) == false
+    render json: {error: "Couldn't find Customer."}, status: 404
+    elsif Customer.exists?(params[:customer_id]) && Customer.find(params[:customer_id]).subscriptions.empty?
+    render json: {error: "Customer has no subscriptions."}, status: 404
+    else Customer.exists?(params[:customer_id])
+      subscriptions = Customer.find(params[:customer_id]).subscriptions
+      render json: SubscriptionSerializer.new(subscriptions), status: 200
+    end
   end
 
   private
