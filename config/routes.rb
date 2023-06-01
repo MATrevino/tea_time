@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  patch '/api/v1/customers/:customer_id/subscriptions', to: 'api/v1/subscriptions#update'
 end
