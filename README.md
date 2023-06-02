@@ -56,10 +56,9 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#api contract">API Contract</a></li>
+    <li><a href="#api-contract">API Contract</a></li>
     <li><a href="#schema">Schema</a></li>
     <li><a href="#issues">Issues</a></li>
-    <li><a href="#postman">Postman</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contributors">Contributors</a></li>
@@ -73,7 +72,12 @@
 ## About The Project
 
 
-#project intro
+Have you ever ran out of your favorite tea when you were craving it the most? Are you concerned about fairtrade products and want to buy from an ethically sourced company?
+
+Tea Time is a subscription service that allows you to choose your favorite tea and have it delivered to your door every month, or twice a month. This application allows customers to choice their tea and subscription plan, as well as cancel their subscription and see all of their subscriptions, both active and cancelled.
+
+Project Link: <br> 
+[GitHub Project Link](https://github.com/MATrevino/tea_time) <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,14 +127,38 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- API CONTRACT -->
 ## API Contract
 
-#to be added
-[Tea Time API Contract]
+Tea Time API Contract
+
+Create subscription
+![query_http_url](images/sub_http_url.png)
+request body:
+![request](images/sub_request.png)
+<br>
+response body:
+![response](images/sub_response.png)
+
+Cancel subscription
+![query_http_url](images/cancel_sub_http_url.png)
+request body:
+![request](images/cancel_sub_request.png)
+<br>
+response body:
+![response](images/cancel_sub_response.png)
+
+3. All subscriptions
+![query_http_url](images/all_subs_http_url.png)
+request body: none
+<br>
+response body:
+![response](images/all_subs_response.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- SCHEMA -->
 ## Schema
 
-#to be added
+![Database_Schema](images/database_schema.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -201,9 +229,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [![GitHub][github-shield]][github-meredith]  <br>
 [![LinkedIn][linkedin-shield]][linkedin-meredith]
 
-
-Project Links: <br> 
-[GitHub Project Link](https://github.com/MATrevino/tea_time) <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
