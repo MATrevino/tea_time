@@ -14,12 +14,11 @@ RSpec.describe 'New Subscription' do
         price: 10,
         status: "active",
         frequency: 1,
-        customer_id: @customer1.id,
         tea_id: @tea2.id
       }
       expect(@customer1.subscriptions.count).to eq(1)
 
-      post "/api/v1/customers/#{params[:customer_id]}/subscriptions", params: params
+      post "/api/v1/customers/#{@customer1.id}/subscriptions", params: params
       
       expect(response).to be_successful
       expect(@customer1.subscriptions.count).to eq(2)
@@ -34,12 +33,11 @@ RSpec.describe 'New Subscription' do
         price: 10,
         status: "active",
         frequency: 1,
-        customer_id: @customer1.id,
         tea_id: 100
       }
       
       expect(@customer1.subscriptions.count).to eq(1)
-      post "/api/v1/customers/#{invalid_params[:customer_id]}/subscriptions", params: invalid_params
+      post "/api/v1/customers/#{@customer1.id}/subscriptions", params: invalid_params
 
       expect(response.status).to eq(404)
       expect(response.body).to eq("{\"error\":\"Subscription not created.\"}")
