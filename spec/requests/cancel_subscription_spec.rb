@@ -17,7 +17,6 @@ RSpec.describe 'cancel subscription' do
       expect(@subscription2.status).to eq("active")
 
       params = {
-        customer_id: @customer1.id,
         subscription_id: @subscription1.id,
         status: "cancelled"
       }
@@ -29,6 +28,8 @@ RSpec.describe 'cancel subscription' do
       expect(subscription[:data][:attributes][:status]).to eq("cancelled")
     end
   end
+
+  #ran out of time to complete sad path testing for canceling subscription. Unsure of what sad path cases to include fully
 
   # describe 'sad path' do
   #   it 'returns an error if subsciption is already cancelled' do
